@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Vitae - Pablo García Giménez</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #3c8dbc;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .language-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-button i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        .language-button:hover {
+            background-color: #ff6347; /* Darker shade on hover */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header h2 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #3c8dbc;
+            margin-top: 0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section li:last-child {
+            border-bottom: none;
+        }
+
+        .two-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .two-columns .column {
+            width: 48%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3c8dbc;
+            color: white;
+            margin-top: 30px;
+        }
+
+        a {
+            color: #3c8dbc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(60,139,188,1) 0%, rgba(255,127,80,1) 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        h2 {
+            border-left: 5px solid #ff7f50;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background-color: #ff7f50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        .intro-text {
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Estilo para la foto */
+        .profile-photo {
+            width: 150px; /* Adjust width */
+            height: 150px; /* Adjust height */
+            border-radius: 50%; /* Circular shape */
+            margin-right: 20px; /* Space to the right of the image */
+            border: 3px solid #3c8dbc; /* Border color */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        /* Flex container for photo and text */
+        .photo-text-container {
+            display: flex;
+            align-items: center; /* Center align vertically */
+            margin-bottom: 40px; /* Space below the container */
+        }
+
+        /* Scroll Arrow Styles */
+        .scroll-arrow {
+            position: absolute;
+            bottom: 20px; /* Distance from bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center the arrow */
+            font-size: 30px; /* Size of the arrow */
+            color: white; /* Color of the arrow */
+            animation: bounce 2s infinite; /* Animation effect */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+/* Crear tres columnas */
+.three-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.three-columns .column {
+    width: 32%;
+}
+
+/* Alinear mejor las listas */
+.three-columns ul {
+    list-style: none;
+    padding: 0;
+}
+
+.three-columns li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.three-columns li:last-child {
+    border-bottom: none;
+}
+
+/* Asegurar que los encabezados tengan la misma alineación */
+.three-columns h3 {
+    margin-top: 20px;
+}
+
+.three-columns .column h3:first-of-type {
+    margin-top: 0; /* Elimina el margen superior del primer h3 en cada columna */
+}
+
+/* Asegurar que los espacios vacíos (h3)&nbsp; tengan el mismo tamaño que un h3 normal */
+h3 {
+    font-size: 1.25rem; /* Tamaño de los encabezados */
+    line-height: 1.5rem; /* Altura de línea */
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <button class="language-button" onclick="window.location.href='index.html'">
+            <i class="fas fa-globe"></i> Español
+        </button>
+        <h1>Curriculum Vitae</h1>
+        <h2>Pablo García Giménez</h2>
+        <p>Professional with extensive experience in the implementation and customization of <span class="highlight">Microsoft Dynamics 365</span>, highlighting in <strong>Business Central</strong> and <strong>Power Platform</strong>. I specialize in solving complex problems and driving projects towards excellence, leveraging the latest technologies and a proactive approach.</p>
+        <i class="fas fa-arrow-down scroll-arrow" id="scrollArrow"></i> <!-- Scroll Arrow -->
+    </header>
+
+    <div class="container">
+        <!-- Introduction -->
+        <div class="section fade-up">
+            <h2>About Me</h2>
+            <div class="photo-text-container">
+                <img src="./foto.jpg" alt="Pablo García Giménez" class="profile-photo">
+                <p class="intro-text">I am a <span class="highlight">technology developer</span> passionate about <strong>problem-solving</strong> and <strong>innovation</strong>. My experience has developed in the field of information technology, managing teams and collaborating on large-scale projects. I am characterized by a strategic and resolutive approach that allows me to transform ideas into viable solutions. My ability to <span class="highlight">coordinate</span> and <span class="highlight">cooperate</span> enables me to work effectively with multidisciplinary teams to achieve outstanding results. Additionally, I am always looking for new ways to improve processes through emerging technologies.</p>
+            </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="section fade-up">
+            <h2>Personal Information</h2>
+            <ul>
+                <li><strong>Name:</strong> Pablo García Giménez</li>
+                <li><strong>ID:</strong> *********</li>
+                <li><strong>Address:</strong> Spain, Guadalajara</li>
+                <li><strong>Phone:</strong> *** *** ***</li>
+                <li><strong>Date of Birth:</strong> **/**/1989</li>
+                <li><strong>Driver's License:</strong> B1</li>
+            </ul>
+        </div>
+
+        <!-- Academic Background -->
+        <div class="section fade-up">
+            <h2>Academic Background</h2>
+            <ul>
+                <li><strong>Bachelor's Degree in Computer Engineering</strong> - Polytechnic University of Madrid. 2009 - 2016</li>
+                <li><strong>Technical Engineering in Systems</strong> - Polytechnic University of Madrid. 2007 - 2008</li>
+                <li><strong>High School and Baccalaureate</strong> - Nuestra Señora del Recuerdo School, Madrid. 2000 - 2006</li>
+                <li><strong>Basic General Education</strong> - Nuestra Señora del Recuerdo School, Madrid. 1995 - 2000</li>
+            </ul>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section fade-up">
+            <h2>Certifications</h2>
+            <ul>
+                <li><strong>Microsoft Certified: Azure AI Engineer Associate</strong> - Microsoft, 2024</li>
+                <li><strong>Microsoft Certified: Dynamics 365 Business Central Developer Associate</strong> - Microsoft, 2024</li>
+                <li><strong>Microsoft Certified: Power Platform Developer Associate</strong> - Microsoft, 2022</li>
+                <li><strong>Microsoft Certified: Azure Data Fundamentals</strong> - Microsoft, 2021</li>
+                <li><strong>Microsoft Certified: Azure Fundamentals</strong> - Microsoft, 2021</li>
+                <li><strong>Microsoft Certified: Azure AI Fundamentals</strong> - Microsoft, 2021</li>
+                <li><strong>Microsoft Certified: Power Platform Fundamentals</strong> - Microsoft, 2021</li>
+                <li><strong>AI Course: Neural Networks and Deep Learning</strong> - Coursera, 2019</li>
+                <li><strong>AI Course: Improving Deep Neural Networks: Hyperparameter Tuning, Regularization</strong> - Coursera, 2019</li>
+                <li><strong>AI Course: Structuring Machine Learning Projects</strong> - Coursera, 2019</li>
+                <li><strong>AI Course: Neural Networks</strong> - Coursera, 2019</li>
+                <li><strong>AI Course: Practical Machine Learning</strong> - Coursera, 2015</li>
+                <li><strong>AI Course: Machine Learning</strong> - Coursera, 2014</li>
+                <li><strong>Mobile Robotics Control Course</strong> - Coursera, 2013</li>
+            </ul>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section fade-up">
+            <h2>Work Experience</h2>
+            <ul>
+                <li><strong>Developer</strong> at AYANET TIC (2020 - present)</li>
+                <li><strong>Extracurricular Robotics and Computer Science Teacher</strong> (2018 - 2020)</li>
+                <li><strong>Freelance Web Developer and Designer</strong> (2017 - 2020)</li>
+                <li><strong>Developer in a Private Laboratory</strong> at Polytechnic University of Madrid (2015 - 2016)</li>
+            </ul>
+        </div>
+
+        <!-- IT Skills Section with 3 Columns -->
+        <div class="section three-columns fade-up">
+            <div class="column">
+                <h2>IT Skills</h2>
+
+                <!-- Priority: Microsoft -->
+                <h3>Microsoft Platforms and Tools</h3>
+                <ul>
+                    <li>Microsoft Power Platform</li>
+                    <ul>
+                        <li>Microsoft Power Automate</li>
+                    </ul>
+                    <li>Microsoft Dynamics 365</li>
+                    <ul>
+                        <li>Business Central</li>
+                        <li>Dynamics NAV</li>
+                        <li>Dynamics ERP</li>
+                    </ul>
+                    <li>Microsoft Azure</li>
+                    <ul>
+                        <li>Azure DevOps</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <div class="column">
+                <!-- Add a space with an empty h3 to align with the other columns -->
+                <h3>&nbsp;</h3>
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>C#, AL, C/AL</li>
+                    <li>TypeScript, JavaScript</li>
+                    <li>HTML5, CSS</li>
+                    <li>SQL, MySQL</li>
+                    <li>R</li>
+                </ul>
+
+                <h3>Web Development</h3>
+                <ul>
+                    <li>Angular</li>
+                    <li>ASP.NET Web API</li>
+                    <li>.NET Framework</li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <!-- Add a space with an empty h3 to align with the other columns -->
+                <h3>&nbsp;</h3>
+                <h3>Mobile Development</h3>
+                <ul>
+                    <li>Ionic Framework</li>
+                    <li>iOS Development</li>
+                    <li>Android Development</li>
+                </ul>
+
+                <h3>Data Science and AI</h3>
+                <ul>
+                    <li>Artificial Intelligence</li>
+                    <li>Machine Learning</li>
+                    <li>Deep Learning</li>
+                    <li>Data Science</li>
+                </ul>
+
+                <h3>Cloud and Web Services</h3>
+                <ul>
+                    <li>Microsoft Azure</li>
+                    <li>Web Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="section fade-up">
+            <h2>Languages</h2>
+            <ul>
+                <li><strong>Spanish:</strong> Native</li>
+                <li><strong>English:</strong> Advanced</li>
+                <li><strong>French:</strong> Basic</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2024 Pablo García Giménez</p>
+        <p><a href="mailto:pggcv@hotmail.com" style="color: white;">Contact</a></p>
+    </footer>
+    
+    <script>
+        // Detectar el scroll y activar la animación en secciones visibles
+        window.addEventListener('scroll', function() {
+            var sections = document.querySelectorAll('.fade-up');
+            sections.forEach(function(section) {
+                var position = section.getBoundingClientRect();
+                if (position.top < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+
+            // Hide the scroll arrow as soon as any content is visible
+            var scrollArrow = document.getElementById('scrollArrow');
+            var firstSection = document.querySelector('.fade-up');
+            if (firstSection.getBoundingClientRect().top < window.innerHeight) {
+                scrollArrow.style.display = 'none';
+            } else {
+                scrollArrow.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
